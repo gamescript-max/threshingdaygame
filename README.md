@@ -1,0 +1,64 @@
+# Threshing Day Game
+
+An English, independent Dragonkind field guide with an original eight-question dragon affinity quiz and a manual retry reminder. Built in this repository using the static architecture of `dressmakergame`.
+
+## Local use
+
+Requires Node.js 22.13 or newer.
+
+```sh
+npm install
+npm run dev -- --port 3100
+```
+
+For the production export:
+
+```sh
+npm run check
+npm run preview
+```
+
+Open http://127.0.0.1:3100. `preview` serves the actual `out/` build, returns genuine 404 responses, and does not use an SPA fallback.
+
+## Domain
+
+The current canonical origin is `https://threshingdaygame.org`. This is a build configuration, not confirmation that the domain has been purchased or connected. Change `NEXT_PUBLIC_SITE_URL` in `.env.local` before building if another domain is selected. The example is in `.env.example`. Metadata, canonical URLs, sitemap, robots and structured data use the same origin.
+
+## Deploy
+
+Upload `out/` to a static host. Cloudflare Workers Static Assets configuration is provided in `wrangler.jsonc`. After logging into your own Cloudflare account:
+
+```sh
+npm run deploy:cloudflare
+```
+
+For Cloudflare Pages, use build command `npm run check` and output directory `out`. Connect the chosen apex domain in Cloudflare, redirect the `www` host to the apex with HTTPS, and submit `/sitemap.xml` in Search Console. Do not use a catch-all rewrite to `/index.html`. No deployment or domain purchase is performed by the build scripts.
+
+## Content and functionality
+
+- `lib/content.ts`: twelve articles, evidence links, related guides and FAQs.
+- `lib/site.ts`: domain, official links and navigation.
+- `lib/quiz.ts`: original quiz scenarios, scores, deterministic tie rules and six result profiles.
+- `components/DragonQuiz.tsx`: progress, local restore, share/copy and SVG result-card download.
+- `components/RetryTimer.tsx`: absolute-time reminder with local restore, pause, resume and reset.
+- `app/globals.css`: responsive visual design and reduced-motion support.
+
+Official gameplay happens at `dragonkind.com`. Our quiz does not assign an official dragon. The reminder uses the remaining time entered by the visitor and cannot read or change an official cooldown. There are no accounts, application backend, advertising or external fonts. Google Analytics 4 uses measurement ID `G-8RXPBQ7HEW` for basic visit statistics. Quiz answers, generated results and timer content stay in the browser and are not sent as custom analytics events. Google may process visited pages, device/browser details and cookie identifiers; see [Google's partner-site privacy explanation](https://policies.google.com/technologies/partner-sites) and [Google Privacy Policy](https://policies.google.com/privacy). Local storage can be unavailable; both tools keep working in memory.
+
+The measurement ID is configured in `lib/site.ts`, and `components/GoogleAnalytics.tsx` loads the Google tag after hydration in the shared layout. For pageviews during Next.js client navigation, keep Enhanced Measurement and “Page changes based on browser history events” enabled in the GA4 web data stream, as described in [Google's SPA measurement guide](https://developers.google.com/analytics/devguides/collection/ga4/single-page-applications). This integration relies on automatic pageviews and does not add manual pageview events. Property settings and receipt in GA Realtime have not been verified from this workspace.
+
+## Validation
+
+`npm run check` typechecks, builds the static export, audits generated HTML metadata and local links, and checks every complete quiz answer combination. Browser QA should additionally cover quiz progression/result/restore, timer validation/restore/pause/reset, mobile navigation, and a missing route.
+
+Privacy and terms remain accessible but are marked `noindex` and excluded from the sitemap. Guides, tools, sources and about are indexable. FAQ structured data matches visible answers; it does not guarantee rich results.
+
+Production browser QA completed on October 3, 2026: eight-question progression, result restore and reset; timer input validation, pause, paused restore, resume, expired restore and reset; navigation that closes after mobile selection; homepage at 320/375 px and mobile quiz/article/timer layouts without horizontal overflow; no captured console errors. HTTP checks confirmed normal routes return 200, unknown routes return 404, and directory routes redirect with 308. The SVG download action produced its success state, but the in-app browser did not expose a completed download event, so file delivery still needs a check in the deployment browser. Native share-sheet delivery was not exercised.
+
+## Artwork
+
+`public/images/dragon-valley.webp` is original editorial artwork generated with the built-in ImageGen tool. It is not official game artwork or a screenshot. Prompt: original 16:9 hand-painted fantasy illustration with engraved print texture; a dark forest-green dragon perched on the right rocky ledge above an alpine ravine, pine forests, mist and a distant weathered stone tower; parchment-gold dawn light, muted greens, grey and cream; open misty valley on the left; no people, text, logos, watermarks, interface or official artwork imitation.
+
+## Updating
+
+Recheck the official game and author FAQ before changing factual guidance. Keep confirmed rules separate from editorial suggestions. Update the checked date only when the sources were actually reviewed. Do not publish invented win routes, probabilities, user counts, official result data or screenshots.

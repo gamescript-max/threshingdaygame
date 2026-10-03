@@ -1,0 +1,11 @@
+import Link from 'next/link';
+import RetryTimer from '@/components/RetryTimer';
+import { Breadcrumbs } from '@/components/Breadcrumbs';
+import { pageMetadata } from '@/lib/metadata';
+import { official } from '@/lib/site';
+
+export const metadata = pageMetadata('Dragonkind Retry Timer — Track Your Next Attempt', 'Set a personal retry timer using the remaining cooldown shown in Dragonkind. Your timer stays on this device and does not access or change the official game.', '/retry-timer/');
+export default function TimerPage() {
+  return <main id="main-content"><div className="container"><Breadcrumbs items={[{ label: 'Retry timer', href: '/retry-timer/' }]} /></div><header className="tool-heading container"><span className="eyebrow">THE FIRE IS NOT THE END</span><h1>Dragonkind retry timer.</h1><p>Enter the remaining wait shown in your official Dragonkind game. We will keep a simple reminder here for you.</p></header><section className="container timer-surface" aria-label="Personal retry timer"><RetryTimer /></section><section className="container section timer-info"><div><span className="eyebrow">BEFORE YOU SET IT</span><h2>Use your game’s remaining time.</h2><p>The author’s FAQ says you can try again after a few hours. It does not publish one fixed cooldown for everyone. Enter what your current game screen shows rather than assuming a four-hour wait.</p><p>This timer is manual. It does not read your account, shorten the official cooldown, or guarantee the game will be ready when the reminder ends. Check Dragonkind before starting your next attempt.</p><a href={official.faq} className="text-link">Read the official retry answer</a></div><div className="while-waiting"><IconPlaceholder /><span className="eyebrow">WHILE THE VALE WAITS</span><h3>Make the next attempt a calmer one.</h3><Link href="/retry-cooldown/">Understand death &amp; retry rules</Link><Link href="/choices-and-outcomes/">What choices can tell you</Link><Link href="/fan-quiz/">Try our original fan dragon quiz</Link><Link href="/privacy/">How local storage works</Link></div></section></main>;
+}
+function IconPlaceholder() { return <span className="timer-info-ornament" aria-hidden="true">✦</span>; }

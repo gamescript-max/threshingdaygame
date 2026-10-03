@@ -1,0 +1,31 @@
+{
+  "name": "threshingdaygame",
+  "version": "1.0.0",
+  "private": true,
+  "type": "module",
+  "scripts": {
+    "dev": "next dev",
+    "build": "next build",
+    "postbuild": "node scripts/flatten-static-rsc.mjs",
+    "preview": "node scripts/preview.mjs",
+    "typecheck": "tsc --noEmit",
+    "audit:seo": "node scripts/audit-seo.mjs",
+    "test:tools": "node --experimental-strip-types scripts/test-tools.mts",
+    "check": "npm run typecheck && npm run build && npm run audit:seo && npm run test:tools",
+    "deploy:cloudflare": "npm run check && npx wrangler deploy"
+  },
+  "engines": { "node": ">=22.13.0" },
+  "dependencies": {
+    "@fontsource/cormorant-garamond": "^5.2.8",
+    "@fontsource/inter": "^5.2.8",
+    "next": "16.3.8",
+    "react": "^19.2.0",
+    "react-dom": "^19.2.0"
+  },
+  "devDependencies": {
+    "@types/node": "^22",
+    "@types/react": "^19",
+    "@types/react-dom": "^19",
+    "typescript": "^5.9.3"
+  }
+}
