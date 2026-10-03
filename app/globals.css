@@ -48,3 +48,12 @@ a.dragon-color-card:hover img{transform:scale(1.025)}
 @media(max-width:1100px){.dragon-color-grid{gap:18px}.dragon-color-copy{padding:21px}.dragon-color-copy h3{font-size:1.75rem}}
 @media(max-width:800px){.dragon-color-grid-home{grid-template-columns:repeat(2,minmax(0,1fr))}.quiz-aside-result{display:block}}
 @media(max-width:560px){.dragon-color-grid{gap:13px}.dragon-color-copy{padding:17px 14px 18px}.dragon-color-copy h3{font-size:1.4rem;gap:9px}.dragon-color-swatch{width:9px;height:9px;box-shadow:0 0 0 3px var(--dragon-tint)}.dragon-color-copy p,.article-body .dragon-color-copy p{font-size:.75rem;line-height:1.7}.dragon-color-more{font-size:.7rem;line-height:1.65;margin-top:13px}.dragon-color-more svg{display:none}.dragon-color-number{top:9px;left:9px;width:24px;height:24px;font-size:.6rem}.dragon-colors-intro{font-size:.85rem;margin-bottom:24px}.dragon-art-note{font-size:.73rem}.quiz-dragon-portrait{margin-top:20px}}
+
+.wordmark{gap:10px;flex-shrink:0;font-size:.85rem;letter-spacing:.09em}
+.brand-dragon{width:48px;height:48px;object-fit:contain;flex-shrink:0}
+.wordmark .brand-name{display:block;white-space:nowrap}
+.wordmark small{font-size:.59rem;letter-spacing:.16em;margin-top:6px}
+.hero-title-keyword{display:block;font-size:clamp(2.3rem,5.4vw,5.4rem);margin-bottom:8px}
+@media(max-width:1100px){.wordmark{font-size:.76rem;letter-spacing:.06em}.brand-dragon{width:42px;height:42px}}
+@media(max-width:800px){.wordmark{font-size:.72rem}.brand-dragon{width:38px;height:42px}.wordmark small{font-size:.52rem;letter-spacing:.1em}}
+@media(max-width:560px){.wordmark{font-size:.75rem;gap:6px;letter-spacing:.07em}.wordmark .brand-name{max-width:117px;white-space:normal;line-height:1.25}.brand-dragon{width:36px;height:44px}.wordmark small{font-size:.49rem;letter-spacing:.07em;margin-top:4px}.hero-title-keyword{font-size:clamp(2.1rem,9.5vw,2.8rem);margin-bottom:14px}}

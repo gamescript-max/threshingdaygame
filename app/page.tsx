@@ -23,9 +23,9 @@ export default function Home() {
       <Image src="/images/dragon-valley.webp" alt="Original fantasy illustration of a green dragon above a misty mountain valley; not a Dragonkind screenshot" fill priority sizes="100vw" className="hero-image" />
       <div className="hero-shade" />
       <div className="container hero-content">
-        <span className="eyebrow hero-eyebrow"><span className="tiny-diamond" /> THE THRESHING DAY GAME FIELD GUIDE</span>
-        <h1>Enter the Vale.<br /><em>Find your dragon.</em></h1>
-        <p>Ready for your Threshing Day? Play Rebecca Yarros’s official Dragonkind experience, find the answer you need, or discover your dragon with our original fan quiz.</p>
+        <span className="eyebrow hero-eyebrow"><span className="tiny-diamond" /> THE DRAGONKIND FIELD GUIDE</span>
+        <h1><span className="hero-title-keyword">Threshing Day Game</span>{' '}<em>Find your dragon.</em></h1>
+        <p>Your Threshing Day Game journey starts here. Play Rebecca Yarros’s official Dragonkind experience, find the answer you need, or discover your dragon with our original fan quiz.</p>
         <div className="button-group"><a href={official.game} target="_blank" rel="noopener noreferrer" className="button button-gold">Play official Dragonkind <Icon name="external" /></a><Link href="/fan-quiz/" className="button button-hero">Take the fan dragon quiz <Icon name="arrow" /></Link></div>
         <div className="hero-note"><Icon name="shield" /> Independent fan guide. The official game is at dragonkind.com.</div>
       </div>
@@ -42,19 +42,19 @@ export default function Home() {
 
     <section className="quiz-feature" aria-labelledby="quiz-feature-title"><div className="container quiz-feature-inner">
       <div className="quiz-feature-art"><Image src="/images/dragon-valley.webp" width={1672} height={941} alt="Original illustration of a forest-green dragon resting on a rocky ledge" sizes="(max-width: 760px) 100vw, 45vw" /><span>THE DRAGONS ARE WAITING</span></div>
-      <div className="quiz-feature-copy"><span className="eyebrow">A DIFFERENT PATH INTO THE VALE</span><h2 id="quiz-feature-title">Which dragon<br />would choose <em>you?</em></h2><p>Eight choices. Six dragon affinities. An original fan-made quiz about how you face the unknown, with a result card to keep or share.</p><div className="quiz-feature-facts"><span><Icon name="clock" /> About 3 minutes</span><span><Icon name="shield" /> No account needed</span></div><Link href="/fan-quiz/" className="button button-primary">Discover your dragon <Icon name="arrow" /></Link><small>For fun. Your result does not predict your official Dragonkind bond.</small></div>
+      <div className="quiz-feature-copy"><span className="eyebrow">A DIFFERENT PATH INTO THE VALE</span><h2 id="quiz-feature-title">Which dragon<br />would choose <em>you?</em></h2><p>Our original Threshing Day Game fan quiz explores how you face the unknown through eight choices and six dragon affinities. Keep or share your personal result card.</p><div className="quiz-feature-facts"><span><Icon name="clock" /> About 3 minutes</span><span><Icon name="shield" /> No account needed</span></div><Link href="/fan-quiz/" className="button button-primary">Discover your dragon <Icon name="arrow" /></Link><small>For fun. Your result does not predict your official Dragonkind bond.</small></div>
     </div></section>
 
     <section className="container section dragon-colors-section" aria-labelledby="dragon-colors-title">
       <div className="section-heading"><div><span className="eyebrow">A DRAGON COLOR FIELD GUIDE</span><h2 id="dragon-colors-title">Six shades of Dragonkind.</h2></div><Link href="/dragon-results/#dragon-colors" className="text-link">Read the result guide <Icon name="arrow" /></Link></div>
-      <p className="dragon-colors-intro">Explore six color families featured in the official Dragonkind collection. Find the color label on your result, then use our illustrations as a visual reference.</p>
+      <p className="dragon-colors-intro">Reading a Threshing Day Game result? Explore six color families featured in the official Dragonkind collection, then use our original illustrations as a visual reference.</p>
       <DragonColorGallery />
       <p className="dragon-art-note">Original fan illustrations. Colors follow the <a href={dragonColorSource} target="_blank" rel="noopener noreferrer">official Dragonkind color collections</a>; these are visual references, not game screenshots or a complete result catalog.</p>
     </section>
 
     <section className="container section companion-section"><div className="section-heading"><div><span className="eyebrow">KEEP YOUR PLACE IN THE STORY</span><h2>While you wait for your next attempt.</h2></div><p>Death at Threshing is not the end. Follow the official retry message and set a personal reminder for your next attempt.</p></div><div className="timer-promo"><div className="timer-promo-icon"><Icon name="clock" width="42" height="42" /></div><div><h3>Your next chance, kept in view.</h3><p>A simple retry timer that stays on this device. Use a time supplied by Dragonkind, or choose your own estimate if no exact time is given.</p></div><Link href="/retry-timer/" className="button button-secondary">Open retry timer <Icon name="arrow" /></Link></div></section>
 
-    <section className="official-section"><div className="container official-inner"><div><span className="eyebrow">THREE DOORS. THREE DIFFERENT STORIES.</span><h2>Looking for the<br /><em>official</em> website?</h2><p>The game, the book, and the author each have their own home. Here is the right place for each.</p><Link href="/dragonkind-vs-threshing-day/" className="text-link">Understand the difference <Icon name="arrow" /></Link></div><div className="official-list">{[
+    <section className="official-section"><div className="container official-inner"><div><span className="eyebrow">THREE DOORS. THREE DIFFERENT STORIES.</span><h2>Looking for the<br /><em>official</em> website?</h2><p>Looking for the official Threshing Day Game? The game, the book, and the author each have their own home. Here is the right place for each.</p><Link href="/dragonkind-vs-threshing-day/" className="text-link">Understand the difference <Icon name="arrow" /></Link></div><div className="official-list">{[
       { href: official.game, label: 'THE OFFICIAL GAME', name: 'Dragonkind', domain: 'dragonkind.com', text: 'Create your candidate account and experience Threshing.' },
       { href: official.book, label: 'THE BOOK WEBSITE', name: 'Threshing Day', domain: 'threshingday.com', text: 'Discover the Empyrean companion collection and book links.' },
       { href: official.faq, label: 'ANSWERS FROM THE AUTHOR', name: 'Rebecca Yarros', domain: 'rebeccayarros.com', text: 'Read the official answers about codes, retries, and dragons.' },

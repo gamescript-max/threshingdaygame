@@ -16,7 +16,7 @@ export const metadata: Metadata = {
   title: { default: 'Threshing Day Game — Dragonkind Guides & Dragon Quiz', template: '%s | Threshing Day Game' },
   description: site.description,
   applicationName: site.name,
-  icons: { icon: '/icon.svg', apple: '/apple-touch-icon.png' },
+  icons: { icon: [{ url: '/images/dragon-favicon.png', sizes: '64x64', type: 'image/png' }], apple: [{ url: '/images/dragon-touch-icon.png', sizes: '180x180', type: 'image/png' }] },
 };
 export const viewport: Viewport = { width: 'device-width', initialScale: 1, themeColor: '#172d25', colorScheme: 'light' };
 

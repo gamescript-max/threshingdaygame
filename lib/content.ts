@@ -34,7 +34,7 @@ export const homepageFaqs = [
     answer: "Rebecca Yarros's FAQ says codes are sent in batches. Check spam and confirm the email address you entered before requesting another code.",
   },
   {
-    question: "Can I try again after dying during Threshing?",
+    question: "Can I retry the Threshing Day game after dying?",
     answer: "Yes. The official FAQ says you can return after a few hours and keep trying. Follow the current message shown by Dragonkind.",
   },
   {
@@ -46,8 +46,8 @@ export const homepageFaqs = [
     answer: "No. Our fan quiz runs in your browser, uses its own original scoring, and does not send answers to Dragonkind or change an official result.",
   },
   {
-    question: "Is Threshing Day a game or a book?",
-    answer: "The phrase is used for the dragon-bonding event, the Threshing Day companion collection, and searches for Dragonkind. Our comparison guide helps you find the right destination.",
+    question: "Is the Threshing Day game different from the book?",
+    answer: "Dragonkind is the official interactive experience. Threshing Day is also the title of the companion collection. Our comparison guide distinguishes the game, the book website, and independent fan quizzes.",
   },
 ];
 
@@ -55,7 +55,7 @@ export const articles: Article[] = [
   {
     slug: "how-to-play",
     title: "How to Play the Threshing Day Game",
-    description: "Find the official Dragonkind experience, understand the email entry step, and prepare for your first Threshing attempt.",
+    description: "Find the official Dragonkind experience behind searches for the Threshing Day Game, understand email entry, and prepare for your first attempt.",
     eyebrow: "START HERE",
     readTime: "5 min read",
     sections: [
@@ -113,8 +113,8 @@ export const articles: Article[] = [
   },
   {
     slug: "code-not-received",
-    title: "Dragonkind Code Not Received?",
-    description: "A practical checklist for a missing Dragonkind email code, with the official explanation and careful next steps.",
+    title: "Threshing Day Game Code Not Received?",
+    description: "Missing a code for the Threshing Day Game? Follow this Dragonkind email checklist, with the official explanation and careful next steps.",
     eyebrow: "EMAIL HELP",
     readTime: "4 min read",
     sections: [
@@ -167,8 +167,8 @@ export const articles: Article[] = [
   },
   {
     slug: "retry-cooldown",
-    title: "Dragonkind Retry and Cooldown Guide",
-    description: "Understand what is confirmed about trying again after Threshing and use a personal countdown without guessing the official timer.",
+    title: "Threshing Day Game Retry and Cooldown Guide",
+    description: "Understand retries for the Threshing Day Game on Dragonkind and use a personal countdown without guessing the official cooldown.",
     eyebrow: "TRY AGAIN",
     readTime: "5 min read",
     sections: [
@@ -223,8 +223,8 @@ export const articles: Article[] = [
   },
   {
     slug: "dragon-results",
-    title: "How to Read Your Dragonkind Result",
-    description: "Explore six dragon color families, record the names and tail types in your Dragonkind result, and assess rarity claims carefully.",
+    title: "Threshing Day Game Dragon Results and Colors",
+    description: "Use this Threshing Day Game guide to explore six dragon color families, record Dragonkind names and tail types, and assess rarity claims.",
     eyebrow: "DRAGON FIELD GUIDE",
     readTime: "5 min read",
     sections: [
@@ -297,8 +297,8 @@ export const articles: Article[] = [
   },
   {
     slug: "choices-and-outcomes",
-    title: "Threshing Day Choices and Outcomes",
-    description: "A careful approach to Dragonkind answers: record your choices, assess player claims, and avoid unsupported guarantees.",
+    title: "Threshing Day Game Choices and Outcomes",
+    description: "Evaluate Threshing Day Game answers and Dragonkind player reports: record choices, compare outcomes, and avoid unsupported guarantees.",
     eyebrow: "CHOICE NOTES",
     readTime: "5 min read",
     sections: [
@@ -352,8 +352,8 @@ export const articles: Article[] = [
   },
   {
     slug: "dragonkind-vs-threshing-day",
-    title: "Dragonkind vs. Threshing Day: Where to Go",
-    description: "Find the official game, the Threshing Day book website, author bonus content, and independent fan activities without mixing them up.",
+    title: "Threshing Day Game: Dragonkind, the Book, and Fan Sites",
+    description: "Looking for the Threshing Day Game? Find official Dragonkind, the Threshing Day book website, author bonus content, and independent fan activities.",
     eyebrow: "FIND YOUR DESTINATION",
     readTime: "4 min read",
     sections: [
@@ -404,8 +404,8 @@ export const articles: Article[] = [
   },
   {
     slug: "wings-and-squads",
-    title: "Dragonkind Wings, Sections, and Squads",
-    description: "A practical guide to recording group labels and finding fellow players while keeping account details private.",
+    title: "Threshing Day Game Wings, Sections, and Squads",
+    description: "Record group labels for the Threshing Day Game on Dragonkind, compare wings and squads, and keep your account details private.",
     eyebrow: "PLAYER NOTES",
     readTime: "4 min read",
     sections: [
@@ -456,7 +456,7 @@ export const articles: Article[] = [
   {
     slug: "faq",
     title: "Threshing Day Game Questions",
-    description: "Quick answers about the official Dragonkind game, missing codes, retries, fan quiz results, and this independent guide.",
+    description: "Quick answers about the Threshing Day Game on Dragonkind, missing codes, retries, fan quiz results, and this independent guide.",
     eyebrow: "COMMON QUESTIONS",
     readTime: "3 min read",
     sections: [
@@ -492,8 +492,8 @@ export const articles: Article[] = [
   },
   {
     slug: "sources",
-    title: "Sources and Editorial Standards",
-    description: "The primary sources behind our Dragonkind guides, what we verify, and how we distinguish facts from fan interpretations.",
+    title: "Threshing Day Game Sources and Editorial Standards",
+    description: "Check the primary sources behind our Threshing Day Game guides and see how we distinguish confirmed Dragonkind facts from fan interpretations.",
     eyebrow: "SHOW THE EVIDENCE",
     readTime: "3 min read",
     sections: [
@@ -538,7 +538,7 @@ export const articles: Article[] = [
   {
     slug: "about",
     title: "About Threshing Day Game",
-    description: "An independent English-language guide to Dragonkind, with source-linked articles and original fan tools.",
+    description: "About Threshing Day Game, an independent English-language guide to Dragonkind with source-linked articles and original fan tools.",
     eyebrow: "INDEPENDENT FAN GUIDE",
     readTime: "2 min read",
     sections: [
