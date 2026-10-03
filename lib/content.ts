@@ -10,6 +10,7 @@ export type Article = {
     paragraphs: string[];
     bullets?: string[];
     links?: { label: string; href: string }[];
+    visual?: "dragon-colors";
   }[];
   faqs?: { question: string; answer: string }[];
   sources: { label: string; href: string }[];
@@ -223,7 +224,7 @@ export const articles: Article[] = [
   {
     slug: "dragon-results",
     title: "How to Read Your Dragonkind Result",
-    description: "Keep a clear record of your dragon result, separate game labels from book lore, and assess rarity claims carefully.",
+    description: "Explore six dragon color families, record the names and tail types in your Dragonkind result, and assess rarity claims carefully.",
     eyebrow: "DRAGON FIELD GUIDE",
     readTime: "5 min read",
     sections: [
@@ -233,6 +234,19 @@ export const articles: Article[] = [
         paragraphs: [
           "A dragon result can make you curious about names, colors, tail types, and how it compares with the dragons in the books. Start by recording the exact labels displayed in your own Dragonkind result. Do not fill a missing field with a guess from a fan chart or a similar-looking image.",
           "The official FAQ confirms that all dragon colors and tail types are possibilities. That statement establishes availability, not the odds of any individual outcome. This site has no verified distribution table, rarity ranking, or complete catalog of current official results.",
+        ],
+      },
+      {
+        id: "dragon-colors",
+        title: "Dragon colors at a glance",
+        visual: "dragon-colors",
+        paragraphs: [
+          "These six color families — red, blue, green, brown, orange, and black — match the collections in the official Dragonkind shop linked from Rebecca Yarros's FAQ. Use the visual as a quick reference while reading the color label shown in your own result.",
+          "The illustrations are original to this website. They are not game screenshots and do not represent exact official color values. This display does not claim to be a complete catalog of current game results or establish the probability of any color.",
+        ],
+        links: [
+          { label: "Official Dragonkind color collections", href: "https://rebeccayarrosshop.com/pages/dragonkind" },
+          officialFaq,
         ],
       },
       {
@@ -273,7 +287,12 @@ export const articles: Article[] = [
       { question: "Does a dragon's color reveal its drop rate?", answer: "No verified drop-rate table is available in our cited sources. A color label alone does not establish rarity." },
       { question: "Is my fan quiz result an official dragon?", answer: "No. It belongs to this site's original activity and does not represent an official Dragonkind assignment." },
     ],
-    sources: [officialFaq, officialGame, officialChapter],
+    sources: [
+      officialFaq,
+      officialGame,
+      officialChapter,
+      { label: "Official Dragonkind color collections", href: "https://rebeccayarrosshop.com/pages/dragonkind" },
+    ],
     related: ["choices-and-outcomes", "wings-and-squads", "sources"],
   },
   {

@@ -43,6 +43,7 @@ For Cloudflare Pages, use build command `npm run check` and output directory `ou
 - `lib/content.ts`: twelve articles, evidence links, related guides and FAQs.
 - `lib/site.ts`: domain, official links and navigation.
 - `lib/quiz.ts`: original quiz scenarios, scores, deterministic tie rules and six result profiles.
+- `lib/dragons.ts` and `components/DragonColorGallery.tsx`: six illustrated color references on the homepage and result guide, also used for fan quiz result portraits.
 - `components/DragonQuiz.tsx`: progress, local restore, share/copy and SVG result-card download.
 - `components/RetryTimer.tsx`: absolute-time reminder with local restore, pause, resume and reset.
 - `app/globals.css`: responsive visual design and reduced-motion support.
@@ -59,9 +60,13 @@ Privacy and terms remain accessible but are marked `noindex` and excluded from t
 
 Production browser QA completed on October 3, 2026: eight-question progression, result restore and reset; timer input validation, pause, paused restore, resume, expired restore and reset; navigation that closes after mobile selection; homepage at 320/375 px and mobile quiz/article/timer layouts without horizontal overflow; no captured console errors. HTTP checks confirmed normal routes return 200, unknown routes return 404, and directory routes redirect with 308. The SVG download action produced its success state, but the in-app browser did not expose a completed download event, so file delivery still needs a check in the deployment browser. Native share-sheet delivery was not exercised.
 
+The six-color update was checked in the production preview at desktop, 375 px and 320 px: all six homepage portraits loaded, the black card reached its guide anchor, and a complete quiz displayed the red portrait and retained it after reload. The result's color-reference link also reached the matching guide card. No horizontal overflow was observed on these new guide/result views.
+
 ## Artwork
 
 `public/images/dragon-valley.webp` is original editorial artwork generated with the built-in ImageGen tool. It is not official game artwork or a screenshot. Prompt: original 16:9 hand-painted fantasy illustration with engraved print texture; a dark forest-green dragon perched on the right rocky ledge above an alpine ravine, pine forests, mist and a distant weathered stone tower; parchment-gold dawn light, muted greens, grey and cream; open misty valley on the left; no people, text, logos, watermarks, interface or official artwork imitation.
+
+The six portraits in `public/images/dragons/` are original editorial illustrations for the red, blue, green, brown, orange and black collections listed in the [official Dragonkind shop](https://rebeccayarrosshop.com/pages/dragonkind). They are visual references, not official screenshots, exact color specifications or a complete current result catalog. All six are 960×640 WebP images, loaded lazily in the galleries. See [the artwork record](docs/dragon-color-artwork.md) for the complete generation prompts and asset details.
 
 ## Updating
 

@@ -1,6 +1,8 @@
 "use client";
 
 import { useEffect, useRef, useState, type CSSProperties } from "react";
+import Image from 'next/image';
+import { dragonArtwork } from '../lib/dragons';
 import { getQuizResult, isValidQuizAnswers, quizQuestions, type DragonProfile } from "../lib/quiz";
 
 const STORAGE_KEY = "threshing-day-fan-quiz-v1";
@@ -25,6 +27,7 @@ export default function DragonQuiz() {
   const focusTarget = useRef<HTMLHeadingElement>(null);
   const shouldFocus = useRef(false);
   const result = completed ? getQuizResult(answers) : null;
+  const artwork = result ? dragonArtwork(result.id) : undefined;
   const question = quizQuestions[questionIndex];
   const answeredCount = answers.filter((answer) => answer !== null).length;
 
@@ -143,6 +146,7 @@ export default function DragonQuiz() {
         <section className={`quiz-result quiz-result-${result.id}`} aria-labelledby="quiz-result-title" style={{ "--quiz-color": result.hex } as CSSProperties}>
           <p className="eyebrow">Your original fan quiz result</p>
           <h2 id="quiz-result-title" ref={focusTarget} tabIndex={-1}>{result.color} dragon affinity</h2>
+          {artwork && <figure className="quiz-dragon-portrait"><Image src={`/images/dragons/${artwork.id}.webp`} width={960} height={640} alt={`Original fan artwork: ${artwork.name.toLowerCase()} dragon`} sizes="(max-width: 560px) 80vw, (max-width: 800px) 85vw, 650px" /><figcaption>Original fan artwork · {artwork.name} dragon</figcaption></figure>}
           <p className="quiz-result-name">{result.title}</p>
           <ul className="quiz-traits" aria-label="Your strongest qualities">{result.traits.map((trait) => <li key={trait}>{trait}</li>)}</ul>
           <p className="quiz-result-meaning">{result.meaning}</p>
@@ -153,7 +157,7 @@ export default function DragonQuiz() {
             <button className="button button-secondary" type="button" onClick={downloadCard}>Download SVG card</button>
             <button className="button button-secondary" type="button" onClick={restartQuiz}>Take it again</button>
           </div>
-          <a className="text-link" href="/dragon-results/">Understand official dragon result fields →</a>
+          <a className="text-link" href={`/dragon-results/#dragon-color-${result.id}`}>Explore the dragon color reference →</a>
         </section>
       ) : (
         <section className="quiz-question" aria-labelledby="quiz-question-title">
@@ -180,8 +184,8 @@ export default function DragonQuiz() {
       )}
       <p className="quiz-status" role="status" aria-live="polite" aria-atomic="true">{message}</p>
       {result && !storageAvailable && <p className="quiz-save-note">Browser storage is unavailable. Download or share your result to keep it.</p>}
-      <aside className="quiz-aside">
-        <img src="/images/dragon-valley.webp" width="1672" height="941" alt="Original forest-green dragon illustration" />
+      <aside className={`quiz-aside${result ? ' quiz-aside-result' : ''}`}>
+        {!result && <img src="/images/dragon-valley.webp" width="1672" height="941" alt="Original forest-green dragon illustration" />}
         <div className="quiz-aside-copy"><span className="eyebrow">AN ORIGINAL FAN STORY</span><h3>Trust your instincts.</h3><p>There is no wrong path here. Choose the answer that feels closest to you.</p><div className="quiz-aside-facts"><span>8 choices</span><span>6 affinities</span><span>No cooldown</span></div>
         <details className="quiz-method">
         <summary>How this quiz chooses a result</summary>

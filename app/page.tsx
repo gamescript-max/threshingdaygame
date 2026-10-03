@@ -1,8 +1,10 @@
 import Image from 'next/image';
 import Link from 'next/link';
+import { DragonColorGallery } from '@/components/DragonColorGallery';
 import { Faq } from '@/components/Faq';
 import { Icon } from '@/components/Icon';
 import { homepageFaqs } from '@/lib/content';
+import { dragonColorSource } from '@/lib/dragons';
 import { pageMetadata } from '@/lib/metadata';
 import { formatCheckedDate, official } from '@/lib/site';
 
@@ -43,7 +45,14 @@ export default function Home() {
       <div className="quiz-feature-copy"><span className="eyebrow">A DIFFERENT PATH INTO THE VALE</span><h2 id="quiz-feature-title">Which dragon<br />would choose <em>you?</em></h2><p>Eight choices. Six dragon affinities. An original fan-made quiz about how you face the unknown, with a result card to keep or share.</p><div className="quiz-feature-facts"><span><Icon name="clock" /> About 3 minutes</span><span><Icon name="shield" /> No account needed</span></div><Link href="/fan-quiz/" className="button button-primary">Discover your dragon <Icon name="arrow" /></Link><small>For fun. Your result does not predict your official Dragonkind bond.</small></div>
     </div></section>
 
-    <section className="container section companion-section"><div className="section-heading"><div><span className="eyebrow">KEEP YOUR PLACE IN THE STORY</span><h2>While you wait for your next attempt.</h2></div><p>Death at Threshing is not the end. Use the remaining time shown in your official game to set a personal reminder.</p></div><div className="timer-promo"><div className="timer-promo-icon"><Icon name="clock" width="42" height="42" /></div><div><h3>Your next chance, kept in view.</h3><p>A simple retry timer that stays on this device. Set it from Dragonkind’s countdown and return when your reminder ends.</p></div><Link href="/retry-timer/" className="button button-secondary">Open retry timer <Icon name="arrow" /></Link></div></section>
+    <section className="container section dragon-colors-section" aria-labelledby="dragon-colors-title">
+      <div className="section-heading"><div><span className="eyebrow">A DRAGON COLOR FIELD GUIDE</span><h2 id="dragon-colors-title">Six shades of Dragonkind.</h2></div><Link href="/dragon-results/#dragon-colors" className="text-link">Read the result guide <Icon name="arrow" /></Link></div>
+      <p className="dragon-colors-intro">Explore six color families featured in the official Dragonkind collection. Find the color label on your result, then use our illustrations as a visual reference.</p>
+      <DragonColorGallery />
+      <p className="dragon-art-note">Original fan illustrations. Colors follow the <a href={dragonColorSource} target="_blank" rel="noopener noreferrer">official Dragonkind color collections</a>; these are visual references, not game screenshots or a complete result catalog.</p>
+    </section>
+
+    <section className="container section companion-section"><div className="section-heading"><div><span className="eyebrow">KEEP YOUR PLACE IN THE STORY</span><h2>While you wait for your next attempt.</h2></div><p>Death at Threshing is not the end. Follow the official retry message and set a personal reminder for your next attempt.</p></div><div className="timer-promo"><div className="timer-promo-icon"><Icon name="clock" width="42" height="42" /></div><div><h3>Your next chance, kept in view.</h3><p>A simple retry timer that stays on this device. Use a time supplied by Dragonkind, or choose your own estimate if no exact time is given.</p></div><Link href="/retry-timer/" className="button button-secondary">Open retry timer <Icon name="arrow" /></Link></div></section>
 
     <section className="official-section"><div className="container official-inner"><div><span className="eyebrow">THREE DOORS. THREE DIFFERENT STORIES.</span><h2>Looking for the<br /><em>official</em> website?</h2><p>The game, the book, and the author each have their own home. Here is the right place for each.</p><Link href="/dragonkind-vs-threshing-day/" className="text-link">Understand the difference <Icon name="arrow" /></Link></div><div className="official-list">{[
       { href: official.game, label: 'THE OFFICIAL GAME', name: 'Dragonkind', domain: 'dragonkind.com', text: 'Create your candidate account and experience Threshing.' },
