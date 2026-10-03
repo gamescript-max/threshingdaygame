@@ -32,6 +32,10 @@ Upload `out/` to a static host. Cloudflare Workers Static Assets configuration i
 npm run deploy:cloudflare
 ```
 
+For the existing Cloudflare Workers project, use project name `threshingdaygame` to match `wrangler.jsonc`, repository `gamescript-max/threshingdaygame`, production branch `master`, build command `npm run check`, deploy command `npx wrangler deploy`, and the repository root as the root directory. The build command must run before deployment because `out/` is generated locally and excluded from Git.
+
+If a build stops while fetching the repository, or the dashboard cannot retrieve GitHub user/organization details, repair the Cloudflare GitHub integration before retrying. This happens before the build command executes. Use the project's Git Repository settings to reconnect the same repository and verify the Cloudflare Workers and Pages GitHub App can access it. See [Cloudflare's GitHub integration guide](https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/github-integration/).
+
 For Cloudflare Pages, use build command `npm run check` and output directory `out`. Connect the chosen apex domain in Cloudflare, redirect the `www` host to the apex with HTTPS, and submit `/sitemap.xml` in Search Console. Do not use a catch-all rewrite to `/index.html`. No deployment or domain purchase is performed by the build scripts.
 
 ## Content and functionality
