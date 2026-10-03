@@ -22,7 +22,7 @@ Open http://127.0.0.1:3100. `preview` serves the actual `out/` build, returns ge
 
 ## Domain
 
-The current canonical origin is `https://threshingdaygame.org`. This is a build configuration, not confirmation that the domain has been purchased or connected. Change `NEXT_PUBLIC_SITE_URL` in `.env.local` before building if another domain is selected. The example is in `.env.example`. Metadata, canonical URLs, sitemap, robots and structured data use the same origin.
+The current canonical origin is `https://www.threshingdaygame.org`. This is a build configuration, not confirmation that the domain has been purchased or connected. Change `NEXT_PUBLIC_SITE_URL` in `.env.local` before building if another domain is selected. The example is in `.env.example`. Metadata, canonical URLs, sitemap, robots and structured data use the same origin. If `NEXT_PUBLIC_SITE_URL` is set in the hosting build environment, it must use this same `www` origin.
 
 ## Deploy
 
@@ -36,7 +36,7 @@ For the existing Cloudflare Workers project, use project name `threshingdaygame`
 
 If a build stops while fetching the repository, or the dashboard cannot retrieve GitHub user/organization details, repair the Cloudflare GitHub integration before retrying. This happens before the build command executes. Use the project's Git Repository settings to reconnect the same repository and verify the Cloudflare Workers and Pages GitHub App can access it. See [Cloudflare's GitHub integration guide](https://developers.cloudflare.com/workers/ci-cd/builds/git-integration/github-integration/).
 
-For Cloudflare Pages, use build command `npm run check` and output directory `out`. Connect the chosen apex domain in Cloudflare, redirect the `www` host to the apex with HTTPS, and submit `/sitemap.xml` in Search Console. Do not use a catch-all rewrite to `/index.html`. No deployment or domain purchase is performed by the build scripts.
+For Cloudflare Pages, use build command `npm run check` and output directory `out`. For either Cloudflare hosting setup, connect `www.threshingdaygame.org` as the primary custom domain, configure a permanent 301 redirect from `threshingdaygame.org` to `https://www.threshingdaygame.org` while preserving the path and query string, and submit `https://www.threshingdaygame.org/sitemap.xml` in Search Console. Do not use a catch-all rewrite to `/index.html`. No deployment or domain purchase is performed by the build scripts.
 
 ## Content and functionality
 

@@ -1,4 +1,4 @@
-const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://threshingdaygame.org';
+const configuredUrl = process.env.NEXT_PUBLIC_SITE_URL || 'https://www.threshingdaygame.org';
 const parsedUrl = new URL(configuredUrl);
 if (!['https:', 'http:'].includes(parsedUrl.protocol) || parsedUrl.pathname !== '/' || parsedUrl.search || parsedUrl.hash) {
   throw new Error('NEXT_PUBLIC_SITE_URL must be a plain HTTP(S) origin without a path, query, or fragment.');
