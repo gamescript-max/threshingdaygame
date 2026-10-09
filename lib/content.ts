@@ -1,23 +1,7 @@
-export type Article = {
-  slug: string;
-  title: string;
-  description: string;
-  eyebrow: string;
-  readTime: string;
-  sections: {
-    id: string;
-    title: string;
-    paragraphs: string[];
-    bullets?: string[];
-    links?: { label: string; href: string }[];
-    visual?: "dragon-colors";
-  }[];
-  faqs?: { question: string; answer: string }[];
-  sources: { label: string; href: string }[];
-  related: string[];
-  noindex?: boolean;
-};
-
+import type { Article } from './article';
+import { entryArticles } from './entry-articles';
+import { loreArticles } from './lore-articles';
+export type { Article } from './article';
 
 const officialGame = { label: "Dragonkind — official experience", href: "https://dragonkind.com/" };
 const officialFaq = { label: "Rebecca Yarros — Dragonkind FAQs", href: "https://rebeccayarros.com/faqs" };
@@ -51,7 +35,7 @@ export const homepageFaqs = [
   },
 ];
 
-export const articles: Article[] = [
+const coreArticles: Article[] = [
   {
     slug: "how-to-play",
     title: "How to Play the Threshing Day Game",
@@ -677,4 +661,20 @@ export const articles: Article[] = [
     sources: [],
     related: ["about", "privacy", "sources"],
   },
+];
+
+const additionalRelated: Record<string, string[]> = {
+  'how-to-play': ['threshing-day-game-website', 'what-is-threshing'],
+  'dragon-results': ['dragon-tail-types'],
+  'dragonkind-vs-threshing-day': ['threshing-day-game-website', 'official-dragon-quiz', 'threshing-day-book'],
+};
+
+export const articles: Article[] = [
+  ...coreArticles.map(article => additionalRelated[article.slug] ? {
+    ...article,
+    updatedDate: '2026-10-09',
+    related: [...article.related, ...additionalRelated[article.slug]],
+  } : article),
+  ...entryArticles,
+  ...loreArticles,
 ];

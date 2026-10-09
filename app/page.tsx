@@ -68,7 +68,7 @@ export default function Home() {
 
     <section className="quiz-feature" aria-labelledby="quiz-feature-title"><div className="container quiz-feature-inner">
       <div className="quiz-feature-art"><Image src="/images/dragon-valley.webp" width={1672} height={941} alt="Original illustration of a forest-green dragon resting on a rocky ledge" sizes="(max-width: 760px) 100vw, 45vw" /><span>THE DRAGONS ARE WAITING</span></div>
-      <div className="quiz-feature-copy"><span className="eyebrow">THRESHING DAY GAME FAN QUIZ</span><h2 id="quiz-feature-title">Which dragon<br />would choose <em>you?</em></h2><p>Our original Threshing Day Game fan quiz explores how you face the unknown through eight choices and six dragon affinities. Keep or share your personal result card.</p><div className="quiz-feature-facts"><span><Icon name="clock" /> About 3 minutes</span><span><Icon name="shield" /> No account needed</span></div><Link href="/fan-quiz/" className="button button-primary">Discover your dragon <Icon name="arrow" /></Link><small>For fun. Your result does not predict your official Dragonkind bond.</small></div>
+      <div className="quiz-feature-copy"><span className="eyebrow">THRESHING DAY GAME FAN QUIZ</span><h2 id="quiz-feature-title">Which dragon<br />would choose <em>you?</em></h2><p>Our original Threshing Day Game fan quiz explores how you face the unknown through eight choices and six dragon affinities. Keep or share your personal result card.</p><div className="quiz-feature-facts"><span><Icon name="clock" /> About 3 minutes</span><span><Icon name="shield" /> No account needed</span></div><Link href="/fan-quiz/" className="button button-primary">Discover your dragon <Icon name="arrow" /></Link><small>For fun. Your result does not predict your official Dragonkind bond.</small><Link href="/official-dragon-quiz/" className="text-link quiz-comparison-link">Compare official and fan quizzes <Icon name="arrow" /></Link></div>
     </div></section>
 
     <section className="container section dragon-colors-section" aria-labelledby="dragon-colors-title">
@@ -87,6 +87,14 @@ export default function Home() {
     ].map((item, i) => <a href={item.href} key={item.href} target="_blank" rel="noopener noreferrer"><span className="official-index">0{i + 1}</span><div><span className="eyebrow">{item.label}</span><h3>{item.name}</h3><p>{item.text}</p><small>{item.domain}</small></div><Icon name="external" /></a>)}</div></div></section>
 
     <section className="container section home-faq"><div><span className="eyebrow">BEFORE YOU ENTER</span><h2>A few things<br />worth knowing.</h2><p>Quick answers about the Threshing Day Game.</p><Link href="/faq/" className="text-link">More questions &amp; answers <Icon name="arrow" /></Link></div><Faq items={homeFaqs} /></section>
+
+    <section className="container section home-resources" aria-labelledby="more-guides-title"><div className="section-heading"><div><span className="eyebrow">FURTHER READING</span><h2 id="more-guides-title">Explore the Threshing Day Game.</h2></div></div><p className="home-resources-intro">Find the right entrance, understand your result, or choose your next read. These guides connect the official activities with their book background.</p><div className="home-resource-grid">{[
+      { href: '/threshing-day-game-website/', title: 'Official website and login', text: 'The Threshing Day Game website guide links to Dragonkind and explains the entry options.' },
+      { href: '/official-dragon-quiz/', title: 'Official quiz or fan quiz?', text: 'Compare the publisher’s Signet Quiz, the official adventure, and our original fan quiz.' },
+      { href: '/dragon-tail-types/', title: 'Dragon tail types', text: 'Understand Threshing Day Game tail labels and read them alongside your dragon’s color.' },
+      { href: '/what-is-threshing/', title: 'What is Threshing?', text: 'Learn the dragon-rider vocabulary and separate book background from current game instructions.' },
+      { href: '/threshing-day-book/', title: 'Book and reading order', text: 'Find the companion collection, the first three novels, and official bonus material.' },
+    ].map(item => <Link key={item.href} href={item.href}><h3>{item.title}</h3><p>{item.text}</p><span>Read the guide <Icon name="arrow" /></span></Link>)}</div></section>
 
     <section className="source-note container"><Icon name="book" /><p>Our Threshing Day Game guides start with official sources. Confirmed rules, practical suggestions, and our original quiz are kept distinct. <Link href="/sources/">Read our sources &amp; methods.</Link></p><span>CHECKED {formatCheckedDate('short').toUpperCase()}</span></section>
   </main>;

@@ -30,6 +30,6 @@ export const nav = [
 
 export const specialRoutes = ['/', '/guides/', '/fan-quiz/', '/retry-timer/'];
 export function absoluteUrl(path = '/') { return new URL(path, `${site.url}/`).href; }
-export function formatCheckedDate(month: 'long' | 'short' = 'long') {
-  return new Intl.DateTimeFormat('en-US', { month, day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(site.checkedDate));
+export function formatCheckedDate(month: 'long' | 'short' = 'long', date = site.checkedDate) {
+  return new Intl.DateTimeFormat('en-US', { month, day: 'numeric', year: 'numeric', timeZone: 'UTC' }).format(new Date(date));
 }
